@@ -1,0 +1,58 @@
+# volume
+"/bin/sh -c "sndioctl output.level=-0.05""
+ mod4 + minus 
+
+"/bin/sh -c "sndioctl output.level=+0.05""
+ mod4 + equal 
+
+"/bin/sh -c "sndioctl output.level=-0.05""
+ mod4 + shift + minus 
+
+"/bin/sh -c "sndioctl output.level=+0.05""
+ mod4 + shift + equal 
+
+# mpc
+"/bin/sh -c "mpc -h ~/.mpd/socket prev""
+ mod4 + z 
+
+"/bin/sh -c "mpc -h ~/.mpd/socket play""
+ mod4 + x 
+
+"/bin/sh -c "mpc -h ~/.mpd/socket pause""
+ mod4 + c 
+
+"/bin/sh -c "mpc -h ~/.mpd/socket stop""
+ mod4 + v 
+
+"/bin/sh -c "mpc -h ~/.mpd/socket next""
+ mod4 + n 
+
+# mpc remote 
+"/bin/sh -c "mpc -h mpd.local prev""
+ mod4 + shift + z 
+
+"/bin/sh -c "mpc -h mpd.local play""
+ mod4 + shift + x 
+
+"/bin/sh -c "mpc -h mpd.local stop""
+ mod4 + shift + v 
+
+"/bin/sh -c "mpc -h mpd.local next""
+ mod4 + shift + n 
+
+# screenshots
+"/bin/sh -c "/usr/local/bin/import ~/.screenshots/screenshot-`date +%Y%m%d-%H%M%S`.png""
+ mod4 + shift + s
+
+# firefox
+"firefox"
+ mod4 + w
+
+"firefox -P social"
+ mod4 + shift + w
+
+"firefox -P remote"
+ mod4 + e
+
+"firefox -P services"
+ mod4 + shift + e
