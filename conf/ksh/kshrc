@@ -1,0 +1,52 @@
+export EDITOR=$VIM
+export FCEDIT=$EDITOR
+export PAGER=less
+export LESS='-iMRS -x2'
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export CLICOLOR=1
+HISTFILE=$HOME/.ksh_history
+HISTSIZE=20000
+
+# emacs mode gives you the familiar Ctrl-A, Ctrl-E, etc
+set -o emacs
+
+# use colorls if it's installed, plain old ls otherwise
+if command -v colorls > /dev/null ; then
+	LS='colorls'
+else
+	LS='ls'
+fi
+
+alias ls="$LS -FHh"
+alias ll='ls -l'
+alias l='ls -lA'
+alias ..='cd ..'
+alias ...='cd ...'
+alias mkdir='mkdir -p'
+alias df='df -h'
+alias du='du -ch'
+
+alias pkill_ssh="kill `ps -ax | grep ssh\  | awk '{printf ("%d ",$1)}'`"
+
+#eh
+alias mpc="mpc -h ~/.mpd/socket"
+
+# nice colored prompt that also sets xterm title
+_XTERM_TITLE='\[\033]0;\u@\h:\w\007\]'
+_PS1_CLEAR='\[\033[0m\]'
+_PS1_BLUE='\[\033[34m\]'
+_PS1_YELLOW='\[\033[33m\]'
+_PS1_RED='\[\033[31m\]'
+_PS1_GREEN='\[\033[32m\]'
+
+case "$(id -u)" in
+	0) _PS1_COLOR='\[\033[1;31m\]' ;;
+	*) _PS1_COLOR=$_PS1_YELLOW   ;;
+esac
+
+PS1='$_PS1_COLOR\u$_PS1_CLEAR@$_PS1_RED\h$_PS1_CLEAR:$_PS1_GREEN\w $_PS1_CLEAR\$ '
+
+if [ -e ~/.ksh_completions ]; then
+  . ~/.ksh_completions
+fi
