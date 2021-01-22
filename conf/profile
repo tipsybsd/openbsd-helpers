@@ -10,6 +10,9 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export _JAVA_AWT_WM_NONREPARENTING=1 
 
 export LC_CTYPE="en_US.UTF-8"
+export EDITOR=vi
+#fuck u, git
+export GIT_EDITOR=vi
 
 # disable core dumps
 ulimit -c 0
