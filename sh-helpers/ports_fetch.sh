@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd /usr
-cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports
+cvs -qd anoncvs@anoncvs.eu.openbsd.org:/cvs checkout -P ports
 
