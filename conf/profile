@@ -14,5 +14,3 @@ export EDITOR=vi
 #fuck u, git
 export GIT_EDITOR=vi
 
-# disable core dumps
-ulimit -c 0

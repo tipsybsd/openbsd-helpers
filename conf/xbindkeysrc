@@ -54,5 +54,5 @@
 "firefox -P remote"
  mod4 + e
 
-"firefox -P services"
+"firefox -P ArenaData"
  mod4 + shift + e
