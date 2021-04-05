@@ -6,6 +6,6 @@ pkg_add -uI &
 
 ./ports_update.sh & 
 
-sleep 20
+sleep 60
 
 ./install_dwm.sh
