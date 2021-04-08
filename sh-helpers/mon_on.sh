@@ -1,6 +1,6 @@
 xrandr > /dev/null
 
-if [ `xrandr | grep VGA-1  | cut -d ' ' -f 2` = 'connected' ]
+if [ "`xrandr | grep VGA-1  | cut -d ' ' -f 2`" = 'connected' ]
 then
     xrandr --output eDP-1 --off    
     xrandr --output VGA-1 --auto

@@ -1,6 +1,6 @@
 xrandr > /dev/null
 
-if [ `xrandr | grep VGA-1  | cut -d ' ' -f 2` = 'connected' ]
+if [ "`xrandr | grep VGA-1  | cut -d ' ' -f 2`" = "'connected'" ]
 then
     xrandr --output VGA-1 --off
     xrandr --output HDMI-1 --off
