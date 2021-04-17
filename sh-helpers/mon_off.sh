@@ -11,4 +11,4 @@ else
 fi    
 
 feh --bg-scale ~/.wallpaper &
-xset m 60/10 0 &
+#xset m 60/10 0 &
