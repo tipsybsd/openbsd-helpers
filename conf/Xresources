@@ -1,0 +1,43 @@
+*font         : -misc-fixed-*-*-*-*-10-*-*-*-*-*-iso10646-*
+
+! ===== xterm
+XTerm*font              : -misc-fixed-*-*-*-*-10-*-*-*-*-*-iso10646-*
+XTerm*background        : black
+XTerm*foreground        : gray
+XTerm*selectToClipboard : true
+
+! remove the additional black border
+XTerm*borderWidth            : 0
+XTerm*internalBorder         : 2
+! set TERM env variable to use 256 colors
+XTerm*termName               : xterm-256color
+! make alt key work normally
+XTerm*vt100.metaSendsEscape  : true
+! save ~10,000 lines of scrollback
+XTerm*v100.saveLines         : 10240
+! hide scrollbar
+XTerm*vt100.scrollBar        : false
+
+! ===== xidle
+! drag pointer to lower left corner to lock screen
+XIdle*position : sw
+! and leave it there for one second.
+XIdle*delay    : 1
+! also lock screen after 5 minutes idle
+XIdle*timeout  : 300
+
+! ===== xlock
+! actually turn the backlight off
+XLock.dpmsoff     : 1
+! plain white-on-black lock screen
+XLock.description : off
+XLock.echokeys    : off
+XLock.info        :
+XLock.background  : black
+XLock.foreground  : white
+XLock.mode        : blank
+XLock.username    : username: 
+XLock.password    : password: 
+XLock.font        : -misc-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-1
+XLock.planfont    : -misc-fixed-medium-r-normal-*-13-*-*-*-*-*-iso10646-1
+
