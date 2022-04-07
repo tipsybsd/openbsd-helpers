@@ -28,6 +28,8 @@ alias df='df -h'
 alias du='du -ch'
 
 alias pkill_ssh="kill `ps -ax | grep ssh\  | awk '{printf ("%d ",$1)}'`"
+alias ssh_drpbear="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes128-cbc"
+alias scp_drpbear="scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes128-cbc"
 
 #eh
 alias mpc="mpc -h ~/.mpd/socket"
