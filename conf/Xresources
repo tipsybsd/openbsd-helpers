@@ -2,6 +2,14 @@
 
 ! ===== xterm
 XTerm*font              : -misc-fixed-*-*-*-*-10-*-*-*-*-*-iso10646-*
+XTerm*fontdefault       : -misc-fixed-*-*-*-*-10-*-*-*-*-*-iso10646-*
+XTerm*font1             : -misc-fixed-*-*-*-*-6-*-*-*-*-*-iso10646-*
+XTerm*font2             : -misc-fixed-*-*-*-*-8-*-*-*-*-*-iso10646-*
+XTerm*font3             : -misc-fixed-*-*-*-*-10*-*-*-*-*-iso10646-*
+XTerm*font4             : -misc-fixed-*-*-*-*-14-*-*-*-*-*-iso10646-*
+XTerm*font5             : -misc-fixed-*-*-*-*-18-*-*-*-*-*-iso10646-*
+XTerm*font6             : -misc-fixed-*-*-*-*-22-*-*-*-*-*-iso10646-*
+XTerm*font7             : -misc-fixed-*-*-*-*-26-*-*-*-*-*-iso10646-*
 XTerm*background        : black
 XTerm*foreground        : gray
 XTerm*selectToClipboard : true
