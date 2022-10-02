@@ -1,0 +1,78 @@
+export LC_CTYPE="en_US.UTF-8"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export DOCKER_HOST=ssh://root@docker.vmm
+
+#pycharm fix
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# load Xresources file
+xrdb -merge $HOME/.Xresources
+
+#russian input
+setxkbmap -layout "us,ru"
+setxkbmap -option "grp:ctrl_shift_toggle"
+
+#thinkpad trackpoint
+xinput set-prop "/dev/wsmouse1" "WS Pointer Wheel Emulation" 1 
+xinput set-prop "/dev/wsmouse1" "WS Pointer Wheel Emulation Button" 2 
+xinput set-prop "/dev/wsmouse1" "WS Pointer Wheel Emulation Axes" 6 7 4 5 
+
+#disable core dump
+ulimit -c 0 &
+
+#disable bell
+xset b off &
+
+#repeat rate
+xset r rate 180 40 &
+
+#trackpoint optional settings
+#xset m 60/10 0 &
+#xset m 60/10 1 &
+
+#block screen
+#xidle -t 300 &
+
+#2nd mon check
+/home/gray/sh-helpers/mon_on.sh &
+#[ `xrandr | grep DP-1  | cut -d ' ' -f 2` = 'connected' ] && xrandr --output DP-1  --mode 1920x1200 && xrandr --output DP-1 --right-of LVDS-1  && xset m &
+#[ `xrandr | grep DP1   | cut -d ' ' -f 2` = 'connected' ] && xrandr --output DP1   --mode 1920x1200 && xrandr --output DP1  --right-of LVDS1   && xset m &
+
+#FIXME dpi workaround
+xrandr --dpi 96 &
+
+#mouse or pimp
+[ `xrandr | grep HDMI-1  | cut -d ' ' -f 2` = 'connected' ] && xset m &
+[ `xrandr | grep HDMI1   | cut -d ' ' -f 2` = 'connected' ] && xset m &
+
+redshift &
+
+# FIXME
+xrdb -merge $HOME/.Xresources
+
+xbindkeys &
+
+# for dwm
+
+while true
+do
+	xsetroot -name " \
+`ifconfig | grep join | cut -d ' ' -f 3` | \
+batt: `apm -l`% | \
+cpu_temp: `sysctl -n hw.sensors.cpu0.temp0` | \
+vol: `sndioctl -n output.level` | \
+`date "+%d.%m.%y %T"` "
+sleep 5
+done &
+
+# terminal
+#st -e tmux attach & 
+xterm -e tmux attach & 
+
+#wallpaper
+feh --bg-scale ~/.wallpaper &
+#black bg
+#xsetroot -solid black &
+
+dwm
+#mate-session
